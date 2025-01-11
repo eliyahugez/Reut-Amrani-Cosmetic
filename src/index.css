@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Heebo:wght@300;400;500;600&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Smooth Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation Delays */
+.delay-0 { transition-delay: 0ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-600 { transition-delay: 600ms; }
+.delay-800 { transition-delay: 800ms; }
+.delay-1000 { transition-delay: 1000ms; }
+
+/* Smooth Image Zoom */
+.image-zoom {
+  transition: transform 0.8s ease-out;
+}
+
+.image-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* Smooth Section Transitions */
+.section-transition {
+  transition: all 0.5s ease-out;
+}
+
+/* Navbar Scroll Effect */
+.navbar-scroll {
+  transition: all 0.3s ease;
+}
+
+.navbar-scroll.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
