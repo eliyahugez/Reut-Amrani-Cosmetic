@@ -2,18 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Heebo:wght@300;400;500;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Heebo:wght@300;400;500;600&display=swap");
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
 }
 
 .font-serif {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 /* Smooth Reveal Animation */
@@ -29,12 +28,24 @@ body {
 }
 
 /* Animation Delays */
-.delay-0 { transition-delay: 0ms; }
-.delay-200 { transition-delay: 200ms; }
-.delay-400 { transition-delay: 400ms; }
-.delay-600 { transition-delay: 600ms; }
-.delay-800 { transition-delay: 800ms; }
-.delay-1000 { transition-delay: 1000ms; }
+.delay-0 {
+  transition-delay: 0ms;
+}
+.delay-200 {
+  transition-delay: 200ms;
+}
+.delay-400 {
+  transition-delay: 400ms;
+}
+.delay-600 {
+  transition-delay: 600ms;
+}
+.delay-800 {
+  transition-delay: 800ms;
+}
+.delay-1000 {
+  transition-delay: 1000ms;
+}
 
 /* Smooth Image Zoom */
 .image-zoom {

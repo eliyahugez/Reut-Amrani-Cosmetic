@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="relative h-full flex items-center justify-center text-center">
         <ScrollReveal className="max-w-3xl px-4 space-y-8">
           <h1 className="text-5xl md:text-7xl font-serif text-white mb-6 leading-tight">
-            רעות עמרני
+            Reut Amrani{" "}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
             חוויית טיפוח יוקרתית ומקצועית בסטנדרטים הגבוהים ביותר
