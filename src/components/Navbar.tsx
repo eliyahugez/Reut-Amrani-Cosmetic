@@ -8,17 +8,17 @@ export default function Navbar() {
     <nav className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <div className="flex-shrink-0 font-serif text-2xl text-gray-800">
+          <div className="font-serif text-2xl text-gray-800">
             רעות עמרני
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-reverse  space-x-4 ">
             <a
               href="#home"
               className="text-gray-700 hover:text-[#C0A080] transition-colors"
             >
-              בית {"  "}
+              בית
             </a>
             <a
               href="#services"

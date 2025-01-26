@@ -1,26 +1,34 @@
 import React from "react";
 import ScrollReveal from "./ScrollReveal";
+import image1 from "../../assets/b41.png";
+import image2 from "../../assets/b42.png";
+import image3 from "../../assets/b43.png";
+import image4 from "../../assets/b44.png";
+import image5 from "../../assets/b45.png";
+import image6 from "../../assets/b46.png";
 
 const transformations = [
   {
-    before:
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    after:
-      "https://media.istockphoto.com/id/503028049/photo/theres-no-better-way-to-relax.jpg?s=2048x2048&w=is&k=20&c=ldfVf0XAC3_sjxgc7aulpBjSo_ni9FArmXbzIdrff-Q=",
-    description: "טיפול פנים מקצועי עם תוצאות מדהימות",
+    before:image1,
+    after:image2
+,    description: "טיפול פנים מקצועי עם תוצאות מדהימות",
   },
   {
-    before:
-      "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    after:
-      "https://media.istockphoto.com/id/503028049/photo/theres-no-better-way-to-relax.jpg?s=2048x2048&w=is&k=20&c=ldfVf0XAC3_sjxgc7aulpBjSo_ni9FArmXbzIdrff-Q=",
-    description: "טיפול אנטי-אייג׳ינג מתקדם",
+    before:image3,
+    after:image4
+,    description: "טיפול פנים מקצועי עם תוצאות מדהימות",
   },
+  {
+    before:image5,
+    after:image6
+,    description: "טיפול פנים -אקנה-   ",
+  },
+  
 ];
 
 export default function BeforeAfter() {
   return (
-    <section className="py-32 bg-white">
+    <section className="py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <h2 className="text-4xl md:text-5xl font-serif text-center text-gray-800 mb-16">

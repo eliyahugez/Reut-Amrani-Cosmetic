@@ -1,22 +1,30 @@
 import React from 'react';
 import { Star } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import feedback1 from "../../assets/fb1.png";
+import feedback2 from "../../assets/bg.jpg";
 
 const testimonials = [
   {
     name: "רונית כהן",
     text: "שירות מדהים ומקצועי! התוצאות עלו על כל הציפיות שלי.",
-    rating: 5
+    rating: 5,
+    image: feedback1,
+    alt: 'Review 1'
   },
   {
     name: "מיכל לוי",
     text: "הטיפולים תמיד מדויקים ומותאמים אישית. ממליצה בחום!",
-    rating: 5
+    rating: 5,
+    image: feedback2,
+    alt: 'Review 2'
   },
   {
     name: "שירה אברהם",
     text: "המקום הכי מקצועי שהייתי בו. תוצאות מדהימות!",
-    rating: 5
+    rating: 5,
+    image: feedback1,
+    alt: 'Review 3'
   }
 ];
 
@@ -38,8 +46,16 @@ export default function Testimonials() {
                     <Star key={i} className="w-6 h-6 text-[#C0A080] fill-current" />
                   ))}
                 </div>
+               
                 <p className="text-gray-700 text-lg mb-6 text-center leading-relaxed">{testimonial.text}</p>
                 <p className="text-[#C0A080] font-medium text-center text-xl">{testimonial.name}</p>
+              </div>
+              <div
+              className='bg-white p-8 rounded-xl shadow-lg transform transition-all duration-300 hover:-translate-y-2'
+              >
+              <img 
+                className='w-72 h-96 mx-auto rounded-full object-cover pt-4' 
+                src={testimonial.image} alt={testimonial.alt} />
               </div>
             </ScrollReveal>
           ))}

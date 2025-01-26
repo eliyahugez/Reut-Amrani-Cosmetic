@@ -21,7 +21,7 @@ export default function VideoSection() {
       <div className="absolute inset-0 bg-black/50"></div>
       <div className="relative h-full flex items-center justify-center text-center">
         <ScrollReveal className="max-w-3xl px-4">
-          <h2 className="text-3xl md:text-5xl font-serif text-white mb-8">
+          <h2 className="text-3xl md:text-5xl font-serif text-amber-200 mb-8">
             הטיפולים המתקדמים ביותר
           </h2>
           <p className="text-lg md:text-xl text-white/90 leading-relaxed">

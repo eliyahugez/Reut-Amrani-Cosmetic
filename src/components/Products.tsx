@@ -42,7 +42,7 @@ export default function Products() {
   ];
 
   return (
-    <div className="p-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <div  className="p-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
       {products.map((product, idx) => (
         <div key={idx} className="bg-white p-6 rounded-lg shadow-lg">
           <img
