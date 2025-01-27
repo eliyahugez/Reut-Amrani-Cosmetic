@@ -36,13 +36,13 @@ export type ProductDetail = {
       ]
     },
     { 
-      id: 1, 
+      id: 2, 
       name: 'קרמים', 
       description: 'סדרת קרמים מתקדמת לטיפוח העור',
       icon: <svg>...</svg>, // Add appropriate SVG
       products: [
         {
-          id: 1,
+          id: 2,
           name: 'קרם לחות עשיר',
           price: '₪199',
           description: 'קרם לחות מתקדם לטיפוח עור הפנים',
@@ -53,13 +53,13 @@ export type ProductDetail = {
       ]
     },
     { 
-      id: 1, 
+      id: 3, 
       name: 'קרמים', 
       description: 'סדרת קרמים מתקדמת לטיפוח העור',
       icon: <svg>...</svg>, // Add appropriate SVG
       products: [
         {
-          id: 1,
+          id: 3,
           name: 'קרם לחות עשיר',
           price: '₪199',
           description: 'קרם לחות מתקדם לטיפוח עור הפנים',

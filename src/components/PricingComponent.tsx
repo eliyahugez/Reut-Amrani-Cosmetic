@@ -1,6 +1,7 @@
 import React from 'react';
 import price1 from "../../assets/price1.png";
 import price2 from "../../assets/price2.png";
+import ScrollReveal from './ScrollReveal';
 
 type PricingItem = {
   id: number;
@@ -42,6 +43,7 @@ export default function PricingComponent() {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <ScrollReveal>  
       <div className="grid md:grid-cols-3 gap-8">
         {/* Images Section */}
         <div className="grid grid-cols-1 gap-6">
@@ -105,6 +107,7 @@ export default function PricingComponent() {
           ))}
         </div>
       </div>
+      </ScrollReveal>
     </div>
   );
 }

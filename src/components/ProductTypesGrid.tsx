@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ProductType, ProductDetail } from './productData.tsx';
 import ProductDetailPage from './ProductDetailPage';
+import ScrollReveal from './ScrollReveal.tsx';
 
 type ProductTypesGridProps = {
   productTypes: ProductType[];
@@ -27,6 +28,7 @@ export default function ProductTypesGrid({ productTypes }: ProductTypesGridProps
   return (
     <div>
       {/* Grid of Product Types */}
+      <ScrollReveal>  
       <div id="services" className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {productTypes.map((type) => (
           <div 
@@ -43,7 +45,6 @@ export default function ProductTypesGrid({ productTypes }: ProductTypesGridProps
           </div>
         ))}
       </div>
-
       {/* Conditional Rendering of Detail Page */}
       {selectedProductType && (
         <ProductDetailPage 
@@ -52,6 +53,8 @@ export default function ProductTypesGrid({ productTypes }: ProductTypesGridProps
           onClose={handleCloseDetailPage} 
         />
       )}
+     </ScrollReveal>  
+
     </div>
   );
 }
