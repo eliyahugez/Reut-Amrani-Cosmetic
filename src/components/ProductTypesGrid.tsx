@@ -28,7 +28,13 @@ export default function ProductTypesGrid({ productTypes }: ProductTypesGridProps
   return (
     <div>
       {/* Grid of Product Types */}
-      <div id="services" className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <ScrollReveal>
+        <h1
+        className='text-4xl md:text-5xl bg-purple-100 font-serif text-center
+        hover:scale-105 duration-300  text-pink-800 mb-16'
+        >Our Products</h1>
+      </ScrollReveal>
+      <div id="services" className=" grid grid-cols-1 md:grid-cols-3 gap-6">
         {productTypes.map((type) => (
           <div 
             key={type.id} 
