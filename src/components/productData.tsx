@@ -1,5 +1,6 @@
 // Centralized type definitions and data
 import product1 from "../../assets/product/1.jpg";
+import product2 from "../../assets/product/3.jpg";
 
 export type ProductDetail = {
     id: number;
@@ -35,15 +36,18 @@ export type ProductDetail = {
           instructions: ['מרחו את הסרום בעדינות על הפנים, צוואר ודקולטה.', 'השתמשו בבוקר ובערב.', 'מתאים לכל סוגי העור.'],
           image: product1
         },
-        {
-          id: 2,
-          name: 'קרם לחות עשיר',
-          price: '300',
-          description: 'קרם לחות מתקדם לטיפוח עור הפנים',
-          activeIngredients: ['היאלורונית', 'ויטמין E', 'קולגן'],
-          instructions: ['לחות עמוקה', 'הצערת העור', 'הגנה מפני זיהום'],
-          image: 'https://example.com/cream.jpg'
-        }
+        
+          {
+            id: 2,
+            name: 'קרם הבהרה B-WHITE CREAM - דרמלוסופי',
+            price: '', // ניתן לעדכן את המחיר אם יש צורך
+            description: 'קרם הבהרה בעל 2 פעולות - פירוק ומניעת היווצרות כתמים. באמצעות שימוש בחומרי הבהרה חזקים ומרוכזים, ושימוש במרכיב ייחודי המאפשר את החדרת המרכיבים לשכבות העמוקות של העור, מקנים תוצאות מצוינות לעור בעל גוון לא אחיד וכתמים.',
+            activeIngredients: ['חומרי הבהרה מרוכזים', 'מרכיב ייחודי להחדרה עמוקה'],
+            instructions: ['מרחי שכבה דקה על האזור הרצוי.', 'יש להשתמש מדי ערב על עור נקי בלבד.', 'מתאים לשימוש ממוקד או אזורים רחבים.'],
+            image: product2
+          }
+          
+        
       ]
     },
     { 
