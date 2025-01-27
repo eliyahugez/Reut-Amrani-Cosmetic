@@ -11,6 +11,7 @@ import ProductTypesGrid from "./components/ProductTypesGrid";
 import PricingComponent from "./components/PricingComponent";
 import ServicesSection from "./components/ServicesSection";
 import ServicesPage from "./components/ServiceModal";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <Testimonials />
       {/* <ServicesSection  /> */}
       <PricingComponent />
+      <WhatsAppButton />
       <Footer />
     </div>
   );

@@ -30,7 +30,7 @@ export default function ProductTypesGrid({ productTypes }: ProductTypesGridProps
       {/* Grid of Product Types */}
       <ScrollReveal>
         <h1
-        className='text-4xl md:text-5xl bg-purple-100 font-serif text-center
+        className='text-4xl md:text-5xl bg-amber-100 bg-opacity-40 font-serif text-center
         hover:scale-105 duration-300  text-pink-800 mb-16'
         >Our Products</h1>
       </ScrollReveal>

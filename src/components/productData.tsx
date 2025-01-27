@@ -52,9 +52,9 @@ export type ProductDetail = {
     },
     { 
       id: 2, 
-      name: 'קרמים', 
-      description: 'סדרת קרמים מתקדמת לטיפוח העור',
-      icon: "https://dermalosophy.co.il/wp-content/uploads/2021/08/Main-Logo-2024-1024x208.png", // Add appropriate SVG
+      name: 'Hava Zingboim', 
+      description: 'מפתחת שיטת הטיפול הדו-עומקי, ומי ששינתה את פני הקוסמטיקה בארץ כשייבאה את ה-P.M.E לישראל, הטמיעה בקרב הקוסמטיקאיות.ים שעובדות.ים איתה את הגישה הדו-עומקית לטיפול בעור המשלבת פיתוחים טכנולוגיים פורצי דרך, והיא לא מפסיקה לחדש ולהפתיע',
+      icon: "https://new-lp.havazingboim.co.il/wp-content/uploads/2022/11/HZ_Workmark_Black_RGB-1.png", // Add appropriate SVG
       products: [
         {
           id: 2,
