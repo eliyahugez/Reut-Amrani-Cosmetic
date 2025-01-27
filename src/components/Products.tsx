@@ -1,4 +1,5 @@
-import React from "react";
+import feedback9 from "../../assets/feedBack/IMG_7719.png";
+
 
 type Product = {
   name: string;
@@ -10,7 +11,7 @@ type Product = {
 export default function Products() {
   const products: Product[] = [
     {
-      src: "https://cdn.pixabay.com/photo/2018/01/15/14/05/cosmetics-3084006_1280.jpg",
+      src: feedback9,
       name: "קרם פנים",
       price: "₪199",
       description: "קרם לחות עשיר",

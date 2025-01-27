@@ -69,13 +69,13 @@ export default function ProductDetailPage({
                 className="w-full rounded-lg mb-6 shadow-md object-cover h-64"
               />
               <h2 className="text-2xl font-bold mb-4">{selectedProduct.name}</h2>
-              <p className="text-gray-700 mb-4">{selectedProduct.description}</p>
+              <p className="text-pink-700 mb-4">{selectedProduct.description}</p>
               
-              {/* Ingredients Section */}
+              {/* Active Ingredients Section */}
               <div className="mb-4">
-                <h3 className="font-semibold mb-2">מרכיבים:</h3>
-                <ul className="list-disc list-inside text-gray-700">
-                  {selectedProduct.ingredients.map((ingredient, index) => (
+                <h3 className="font-semibold mb-2">מרכיבים פעילים:</h3>
+                <ul className="list-disc list-inside text-pink-700">
+                  {selectedProduct.activeIngredients.map((ingredient, index) => (
                     <li key={index}>{ingredient}</li>
                   ))}
                 </ul>
@@ -83,10 +83,10 @@ export default function ProductDetailPage({
               
               {/* Benefits Section */}
               <div>
-                <h3 className="font-semibold mb-2">יתרונות:</h3>
-                <ul className="list-disc list-inside text-gray-700">
-                  {selectedProduct.benefits.map((benefit, index) => (
-                    <li key={index}>{benefit}</li>
+                <h3 className="font-semibold mb-2">הוראות שימוש:</h3>
+                <ul className="list-disc list-inside text-pink-700">
+                  {selectedProduct.instructions.map((instruction, index) => (
+                    <li key={index}>{instruction}</li>
                   ))}
                 </ul>
               </div>

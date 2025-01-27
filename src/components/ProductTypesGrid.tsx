@@ -28,22 +28,22 @@ export default function ProductTypesGrid({ productTypes }: ProductTypesGridProps
   return (
     <div>
       {/* Grid of Product Types */}
-      <ScrollReveal>  
       <div id="services" className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {productTypes.map((type) => (
           <div 
             key={type.id} 
             onClick={() => handleTypeClick(type)}
-            className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl 
+            className="bg-purple-100 p-6 rounded-lg shadow-md hover:shadow-xl 
                         transition-all duration-300 cursor-pointer 
                         transform hover:-translate-y-2 
                         flex flex-col items-center"
           >
-            <div className="text-purple-600 mb-4">{type.icon}</div>
+            <img className="text-purple-600 mb-4" src={type.icon} alt={type.name} />
             <h3 className="text-xl font-bold text-gray-800">{type.name}</h3>
             <p className="text-gray-600 text-center mt-2">{type.description}</p>
           </div>
         ))}
+
       </div>
       {/* Conditional Rendering of Detail Page */}
       {selectedProductType && (
@@ -53,7 +53,6 @@ export default function ProductTypesGrid({ productTypes }: ProductTypesGridProps
           onClose={handleCloseDetailPage} 
         />
       )}
-     </ScrollReveal>  
 
     </div>
   );

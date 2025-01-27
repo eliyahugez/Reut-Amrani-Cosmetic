@@ -1,32 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@400..400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+IN&family=Rubik+Vinyl&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Heebo:wght@300;400;500;600&display=swap");
+
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: "Heebo", sans-serif;
+:root {
+  --heading-font: 'Heebo';
+  --body-font: 'Assistant';
+  --comic-font: 'Varela Round';
 }
-.Rubik_Vinyl {
-  font-family: "Playwrite IN", "Rubik Vinyl";
-}
-
-.playwrite {
-  font-family: "Playwrite IN", cursive;
-}
-
-.font-serif {
-  font-family: "Playfair Display", serif;
-}
-.font-heebo {
-  font-family: "Heebo", sans-serif;
-}
-
 /* Smooth Reveal Animation */
 .reveal {
   opacity: 0;

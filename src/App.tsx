@@ -15,7 +15,7 @@ function App() {
   // const [showDetailPage, setShowDetailPage] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white" dir="rtl">
+    <div className="min-h-screen bg-white font-[var(--comic-font)]"  dir="rtl">
       <Navbar />
       <Hero />
       <VideoSection />
