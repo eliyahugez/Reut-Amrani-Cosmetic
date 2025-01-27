@@ -4,43 +4,47 @@ import { Menu, X, Instagram, Facebook, Phone } from "lucide-react";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navCloseClass ="block px-3 py-2 text-gray-700 hover:text-[#C0A080] hover:animate-pulse hover:text-lg hover:duration-300 ";
+  const navClass ="text-gray-700 hover:text-[#C0A080] transition-colors hover:animate-bounce hover:duration-300";
   return (
-    <nav className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-md">
+    <nav className="fixed w-full bg-amber-100/90 backdrop-blur-sm z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="font-serif text-2xl text-gray-800">
-            רעות עמרני
+            <img
+            className="max-h-16 w-24 overflow-hidden "
+            src="https://i.ibb.co/jkzngBK/9c759548-1da6-4002-89d9-5652bfd4d765.jpg" alt="logo" />
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-reverse  space-x-4 ">
+          <div className="hidden md:flex items-center  space-x-reverse  space-x-4 ">
             <a
               href="#home"
-              className="text-gray-700 hover:text-[#C0A080] transition-colors"
+              className={navClass}
             >
               בית
             </a>
             <a
               href="#services"
-              className="text-gray-700 hover:text-[#C0A080] transition-colors"
+              className={navClass}
             >
               שירותים
             </a>
             <a
               href="#gallery"
-              className="text-gray-700 hover:text-[#C0A080] transition-colors"
+              className={navClass}
             >
               גלריה
             </a>
             <a
               href="#testimonials"
-              className="text-gray-700 hover:text-[#C0A080] transition-colors"
+              className={navClass}
             >
               המלצות
             </a>
             <a
               href="#contact"
-              className="text-gray-700 hover:text-[#C0A080] transition-colors"
+              className={navClass}
             >
               צור קשר
             </a>
@@ -50,7 +54,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700"
+              className="text-gray-700 hover:text-[#C0A080] transition-colors animate-bounce"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -61,34 +65,34 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
+          <div className="px-2 font-sans pt-2 pb-3 rounded-md space-y-1 sm:px-3 bg-amber-100/90">
             <a
               href="#home"
-              className="block px-3 py-2 text-gray-700 hover:text-[#C0A080]"
+              className={navCloseClass}
             >
               בית
             </a>
             <a
               href="#services"
-              className="block px-3 py-2 text-gray-700 hover:text-[#C0A080]"
+              className={navCloseClass}
             >
               שירותים
             </a>
             <a
               href="#gallery"
-              className="block px-3 py-2 text-gray-700 hover:text-[#C0A080]"
+              className={navCloseClass}
             >
               גלריה
             </a>
             <a
               href="#testimonials"
-              className="block px-3 py-2 text-gray-700 hover:text-[#C0A080]"
+              className={navCloseClass}
             >
               המלצות
             </a>
             <a
               href="#contact"
-              className="block px-3 py-2 text-gray-700 hover:text-[#C0A080]"
+              className={navCloseClass}
             >
               צור קשר
             </a>

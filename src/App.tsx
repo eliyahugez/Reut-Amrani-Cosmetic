@@ -9,6 +9,8 @@ import Footer from "./components/Footer";
 import productTypes from "./components/productData";
 import ProductTypesGrid from "./components/ProductTypesGrid";
 import PricingComponent from "./components/PricingComponent";
+import ServicesSection from "./components/ServicesSection";
+import ServicesPage from "./components/ServiceModal";
 
 
 function App() {
@@ -20,10 +22,12 @@ function App() {
       <Hero />
       <VideoSection />
       <Gallery />
+      <ServicesPage />
       <BeforeAfter />
       {/* <ProductDynamic /> */}
       <ProductTypesGrid productTypes={productTypes} />
       <Testimonials />
+      {/* <ServicesSection  /> */}
       <PricingComponent />
       <Footer />
     </div>
