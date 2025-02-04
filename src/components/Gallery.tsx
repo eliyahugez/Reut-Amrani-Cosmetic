@@ -21,20 +21,21 @@ export default function Gallery() {
     <section id="gallery" className="py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <h2 className="text-4xl md:text-5xl font-serif text-center text-gray-800 mb-16">
+          <h2 className="text-4xl md:text-5xl font-serif text-center
+           hover:animate-fade-up text-gray-800 mb-16">
             הגלריה שלנו
           </h2>
         </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {images.map((image, index) => (
-            <ScrollReveal key={index} className={`delay-${index * 200}`}>
+            <ScrollReveal key={index} className={`delay-${index * 100}`}>
               <div className="relative overflow-hidden rounded-xl shadow-lg group">
                 <img
                   src={image}
                   alt={`Gallery image ${index + 1}`}
                   className="w-full h-80 object-cover image-zoom"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500"></div>
               </div>
             </ScrollReveal>
           ))}

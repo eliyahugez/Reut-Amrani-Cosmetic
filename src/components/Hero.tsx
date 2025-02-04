@@ -1,5 +1,6 @@
 import ScrollReveal from "./ScrollReveal";
 import imageBG from "../../assets/bg.jpg";
+import h1bg from "../../assets/Reut_Amrani_bg_removed.png.png";
 export default function Hero() {
   return (
     <div id="home" className="relative h-screen overflow-hidden">
@@ -13,11 +14,12 @@ export default function Hero() {
       </div>
       <div className="relative h-full flex items-center justify-center text-center">
         <ScrollReveal className="max-w-3xl px-4 space-y-8">
-          <h1 className="font-heebo text-5xl md:text-7xl font-serif text-white mb-6 leading-tight">
-            Reut Amrani{" "}
+          <h1 
+          className="font-heebo text-5xl md:text-7xl font-serif text-white mb-6 leading-tight">
+           <img src={h1bg} alt="Reut_Amrani_bg_removed" />
           </h1>
           <p className=" Rubik_Vinyl text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-           "The best cosmetic professional in Tel Aviv"
+           ""
           </p>
           <button 
           onClick={() => {

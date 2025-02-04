@@ -27,6 +27,9 @@ html {
 .delay-0 {
   transition-delay: 0ms;
 }
+.delay-100 {
+  transition-delay: 100ms;
+}
 .delay-200 {
   transition-delay: 200ms;
 }

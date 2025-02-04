@@ -66,10 +66,10 @@ export default function ProductDetailPage({
               <img 
                 src={selectedProduct.image} 
                 alt={selectedProduct.name} 
-                className="w-full rounded-lg mb-6 shadow-md object-cover h-64"
+                className="w-min mx-auto rounded-lg mb-6 shadow-md object-cover h-64"
               />
               <h2 className="text-2xl font-bold mb-4">{selectedProduct.name}</h2>
-              <p className="text-pink-700 mb-4">{selectedProduct.description}</p>
+              <p className={`text-${selectedProduct.textColor}-700 mb-4`}>{selectedProduct.description}</p>
               
               {/* Active Ingredients Section */}
               <div className="mb-4">

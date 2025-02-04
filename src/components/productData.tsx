@@ -1,6 +1,7 @@
 // Centralized type definitions and data
 import product1 from "../../assets/product/1.jpg";
 import product2 from "../../assets/product/3.jpg";
+import product3 from "../../assets/product/5.jpg";
 
 export type ProductDetail = {
     id: number;
@@ -10,6 +11,7 @@ export type ProductDetail = {
     activeIngredients: string[];
     instructions: string[];
     image: string;
+    textColor: string;
   };
   
   export type ProductType = {
@@ -34,7 +36,8 @@ export type ProductDetail = {
           description: 'הכירו את סרום 24 מבית Dermalosophy, פריצת דרך בעולם הקוסמטיקה המתקדמת. הסרום מיועד להזנה עמוקה והענקת לחות לאורך זמן, הודות לטכנולוגיית Longlasting ייחודית שמבטיחה שהעור יישאר רווי, זוהר ונעים למגע למשך כל היום.',
           activeIngredients: ['שמנים טבעיים', 'פוספוליפידים', 'גליקוליפידים', 'ספינגוליפידים', 'ויטמינים'],
           instructions: ['מרחו את הסרום בעדינות על הפנים, צוואר ודקולטה.', 'השתמשו בבוקר ובערב.', 'מתאים לכל סוגי העור.'],
-          image: product1
+          image: product1,
+          textColor: 'pink'
         },
         
           {
@@ -44,7 +47,8 @@ export type ProductDetail = {
             description: 'קרם הבהרה בעל 2 פעולות - פירוק ומניעת היווצרות כתמים. באמצעות שימוש בחומרי הבהרה חזקים ומרוכזים, ושימוש במרכיב ייחודי המאפשר את החדרת המרכיבים לשכבות העמוקות של העור, מקנים תוצאות מצוינות לעור בעל גוון לא אחיד וכתמים.',
             activeIngredients: ['חומרי הבהרה מרוכזים', 'מרכיב ייחודי להחדרה עמוקה'],
             instructions: ['מרחי שכבה דקה על האזור הרצוי.', 'יש להשתמש מדי ערב על עור נקי בלבד.', 'מתאים לשימוש ממוקד או אזורים רחבים.'],
-            image: product2
+            image: product2,
+            textColor: 'amber'
           }
           
         
@@ -63,8 +67,20 @@ export type ProductDetail = {
           description: 'קרם לחות מתקדם לטיפוח עור הפנים',
           activeIngredients: ['היאלורונית', 'ויטמין E', 'קולגן'],
           instructions: ['לחות עמוקה', 'הצערת העור', 'הגנה מפני זיהום'],
-          image: 'https://example.com/cream.jpg'
+          image: 'https://example.com/cream.jpg',
+          textColor: 'green'
+        },
+        {
+          id: 3,
+          name: 'קרם לחות לעור יבש',
+          price: '₪249',
+          description: 'קרם לחות עשיר אשר מעלה את רמת לחות העור, תורם לגמישותו ומגן עליו מפני נזקי הסביבה. מתאים לשימוש יום יומי ומיועד במיוחד לעור יבש.',
+          activeIngredients: ['חומצה היאלורונית', 'ויטמין E', 'קולגן'],
+          instructions: ['מרכך ומרגיע את העור', 'מחדיר לחות לעור', 'משפר את גמישות העור'],
+          image: product3,
+          textColor: 'green'
         }
+        
       ]
     },
     { 
@@ -80,7 +96,8 @@ export type ProductDetail = {
           description: 'קרם לחות מתקדם לטיפוח עור הפנים',
           activeIngredients: ['היאלורונית', 'ויטמין E', 'קולגן'],
           instructions: ['לחות עמוקה', 'הצערת העור', 'הגנה מפני זיהום'],
-          image: 'https://example.com/cream.jpg'
+          image: 'https://example.com/cream.jpg',
+          textColor: 'green'
         }
       ]
     },
