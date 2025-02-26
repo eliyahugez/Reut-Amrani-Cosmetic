@@ -1,45 +1,58 @@
-import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { X } from 'lucide-react';
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { X } from "lucide-react";
 // import VimeoVideoLazy from './VimeoVideoLazy';
-import services, { Service } from './serviceData'; // ייבוא הנתונים והטיפוסים
+import services, { Service } from "./serviceData"; // ייבוא הנתונים והטיפוסים
 
-const ServiceModal = ({ service, onClose }: { service: Service; onClose: () => void }) => {
+const ServiceModal = ({
+  service,
+  onClose,
+}: {
+  service: Service;
+  onClose: () => void;
+}) => {
   const renderVideo = () => {
     switch (service.video.type) {
-      case 'vimeo':
+      case "vimeo":
         return (
           <div className="aspect-w-16 aspect-h-9 mb-6">
             <iframe
-              src={`https://player.vimeo.com/video/${service.video.url.split('/').pop()}`}
+              src={`https://player.vimeo.com/video/${service.video.url
+                .split("/")
+                .pop()}`}
               title={service.title}
               allow="autoplay; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               className="rounded-lg shadow-md"
+              loading="lazy"
               allowFullScreen
             />
           </div>
         );
 
-      case 'youtube':
+      case "youtube":
         return (
           <div className="aspect-w-16 aspect-h-9 mb-6">
             <iframe
-              src={`https://www.youtube.com/embed/${service.video.url.split('v=')[1]}`}
+              src={`https://www.youtube.com/embed/${
+                service.video.url.split("v=")[1]
+              }`}
               title={service.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               className="rounded-lg shadow-md"
+              loading="lazy"
               allowFullScreen
             />
           </div>
         );
 
-      case 'local':
+      case "local":
         return (
           <div className="aspect-w-16 aspect-h-9 mb-6">
             <video
               controls
               className="w-full h-full rounded-lg shadow-md"
               poster={service.video.thumbnail}
+              preload="none"
               autoPlay
               loop
             >
@@ -56,48 +69,49 @@ const ServiceModal = ({ service, onClose }: { service: Service; onClose: () => v
 
   return (
     <motion.div
-      className="fixed  inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
       onClick={onClose}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
       <motion.div
-        className="relative bg-pink-100 bg-opacity-75 rounded-lg shadow-xl max-w-4xl w-full mx-4 overflow-y-auto max-h-[90vh]"
+        className="relative bg-pink-100 bg-opacity-75 rounded-lg shadow-xl w-full max-w-4xl overflow-y-auto max-h-[90vh]"
         onClick={(e) => e.stopPropagation()}
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 50, opacity: 0 }}
-        transition={{ type: 'spring', stiffness: 100 }}
+        transition={{ type: "spring", stiffness: 100 }}
       >
         <button
           onClick={onClose}
-          className="absolute animate-spin top-4 right-4 p-2 rounded-full hover:bg-red-100 transition-colors"
+          className="absolute top-4 right-4 p-2 rounded-full hover:bg-red-100 transition-colors"
+          aria-label="Close modal"
         >
           <X className="w-6 h-6" />
         </button>
 
-        <div className="text-center p-8">
-          <h2 className="text-3xl font-bold mb-6 text-primary-600">{service.title}</h2>
+        <div className="p-6 md:p-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-primary-600 text-center">
+            {service.title}
+          </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              {renderVideo()}
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            <div className="space-y-6">{renderVideo()}</div>
 
-              
-            </div>
-
-            <div>
-              <div className="bg-gray-50 p-6 rounded-lg mb-8">
+            <div className="space-y-6">
+              <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold mb-4">מחירון</h3>
                 <div className="space-y-3">
                   {service.pricing.map((item) => (
                     <div
                       key={item.description}
-                      className="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm"
+                      className="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
                     >
-                      <span>{item.description}</span>
-                      <span className="font-medium text-primary-500">
+                      <span className="text-sm md:text-base">
+                        {item.description}
+                      </span>
+                      <span className="font-medium text-primary-500 text-sm md:text-base">
                         {item.price}
                       </span>
                     </div>
@@ -107,21 +121,29 @@ const ServiceModal = ({ service, onClose }: { service: Service; onClose: () => v
 
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold mb-4">המלצה</h3>
-                <blockquote className="italic text-gray-600 mb-2">
+                <blockquote className="italic text-gray-600 mb-4">
                   "{service.testimonial.text}"
                 </blockquote>
                 <img
-                className='w-full h-auto mx-auto rounded-3xl shadow-xl  object-cover pt-4'
-                src={service.testimonial.image} alt={service.testimonial.author} />
-                <p className="text-right font-medium">- {service.testimonial.author}</p>
+                  className="w-full h-auto rounded-3xl shadow-xl object-cover"
+                  src={service.testimonial.image}
+                  alt={service.testimonial.author}
+                  loading="lazy"
+                />
+                <p className="text-right font-medium mt-4">
+                  - {service.testimonial.author}
+                </p>
               </div>
-              <div className="mt-8">
-                <h3 className="text-xl font-semibold mb-4">טכנולוגיות בשימוש</h3>
+
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-4">
+                  טכנולוגיות בשימוש
+                </h3>
                 <div className="flex flex-wrap gap-2">
                   {service.technologies.map((tech) => (
                     <div
                       key={tech}
-                      className="bg-gray-100 text-center px-3 py-1 rounded-full text-sm"
+                      className="bg-gray-100 px-3 py-1 rounded-full text-sm hover:bg-gray-200 transition-colors duration-200"
                     >
                       {tech}
                     </div>
@@ -136,24 +158,22 @@ const ServiceModal = ({ service, onClose }: { service: Service; onClose: () => v
   );
 };
 
-
-
 const ServicesPage = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
 
   return (
-    <div 
-    id='services'
-    className="min-h-screen bg-gray-50 py-12">
+    <div id="services" className="min-h-screen bg-gray-50 py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">שירותים שלי</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-800">
+          שירותים שלי
+        </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
           {services.map((service) => (
             <motion.div
               key={service.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow"
-              whileHover={{ scale: 1.03 }}
+              className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
+              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setSelectedService(service)}
             >
@@ -161,11 +181,12 @@ const ServicesPage = () => {
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="object-cover"
+                  className="object-cover w-full h-full"
+                  loading="lazy"
                 />
               </div>
-              <div className="p-6  bg-amber-100">
-                <h2 className="text-2xl px-4 py-2 font-semibold mb-2 text-amber-800">
+              <div className="p-6 bg-amber-100">
+                <h2 className="text-xl md:text-2xl font-semibold text-amber-800">
                   {service.title}
                 </h2>
               </div>
@@ -184,6 +205,6 @@ const ServicesPage = () => {
       </AnimatePresence>
     </div>
   );
-}
+};
 
 export default ServicesPage;

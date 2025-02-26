@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import VideoSection from "./components/VideoSection";
@@ -12,27 +12,36 @@ import PricingComponent from "./components/PricingComponent";
 import ServicesSection from "./components/ServicesSection";
 import ServicesPage from "./components/ServiceModal";
 import WhatsAppButton from "./components/WhatsAppButton";
-
+import { HelmetProvider } from "react-helmet-async";
+import SEOMetadata from "./components/SEOMetadata";
 
 function App() {
-  // const [showDetailPage, setShowDetailPage] = useState(false);
-
   return (
-    <div className="min-h-screen bg-white font-[var(--comic-font)]"  dir="rtl">
-      <Navbar />
-      <Hero />
-      <VideoSection />
-      <Gallery />
-      <ServicesPage />
-      <BeforeAfter />
-      {/* <ProductDynamic /> */}
-      <ProductTypesGrid productTypes={productTypes} />
-      <Testimonials />
-      {/* <ServicesSection  /> */}
-      <PricingComponent />
-      <WhatsAppButton />
-      <Footer />
-    </div>
+    <HelmetProvider>
+      <div className="min-h-screen bg-gray-50">
+        <SEOMetadata
+          title="רעות עמרני - קוסמטיקאית מקצועית | טיפולי פנים ואסתטיקה"
+          description="טיפולי פנים מקצועיים, טיפולי אנטי אייג'ינג, טיפולי אקנה וטיפולי עור מתקדמים. ניסיון של שנים בתחום הקוסמטיקה והאסתטיקה."
+          keywords="קוסמטיקאית, טיפולי פנים, אנטי אייג'ינג, טיפולי אקנה, טיפולי עור, קוסמטיקה מקצועית"
+        />
+        <Navbar />
+        <main className="pt-16">
+          {" "}
+          {/* Add padding-top to account for fixed navbar */}
+          <Hero />
+          <VideoSection />
+          <Gallery />
+          <ProductTypesGrid productTypes={productTypes} />
+          <Testimonials />
+          <BeforeAfter />
+          {/* <ServicesSection /> */}
+          <ServicesPage />
+          <PricingComponent />
+        </main>
+        <WhatsAppButton />
+        <Footer />
+      </div>
+    </HelmetProvider>
   );
 }
 

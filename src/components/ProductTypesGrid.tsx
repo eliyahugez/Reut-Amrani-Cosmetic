@@ -8,50 +8,52 @@ type ProductTypesGridProps = {
 };
 
 export default function ProductTypesGrid({ productTypes }: ProductTypesGridProps) {
-  // State to manage selected product type and detail
   const [selectedProductType, setSelectedProductType] = useState<ProductType | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<ProductDetail | null>(null);
 
-  // Handler for selecting a product type
   const handleTypeClick = (type: ProductType) => {
     setSelectedProductType(type);
-    // Automatically select first product if exists
     setSelectedProduct(type.products[0] || null);
   };
 
-  // Handler to close the detail view
   const handleCloseDetailPage = () => {
     setSelectedProductType(null);
     setSelectedProduct(null);
   };
 
   return (
-    <div>
-      {/* Grid of Product Types */}
+    <div className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
       <ScrollReveal>
-        <h1
-        className='text-4xl md:text-5xl bg-amber-100 bg-opacity-40 font-serif text-center
-        hover:scale-105 duration-300  text-pink-800 mb-16'
-        >Our Products</h1>
+        <h1 className="text-4xl md:text-5xl font-serif text-center text-pink-800 mb-12 md:mb-16 bg-amber-100 bg-opacity-40 py-4 rounded-lg hover:scale-105 duration-300">
+          המוצרים שלנו
+        </h1>
       </ScrollReveal>
-      <div id="services" className=" grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div id="services" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
         {productTypes.map((type) => (
           <div 
             key={type.id} 
             onClick={() => handleTypeClick(type)}
             className="bg-purple-100 p-6 rounded-lg shadow-md hover:shadow-xl 
-                        transition-all duration-300 cursor-pointer 
-                        transform hover:-translate-y-2 
-                        flex flex-col items-center"
+                      transition-all duration-300 cursor-pointer 
+                      transform hover:-translate-y-2 
+                      flex flex-col items-center
+                      hover:bg-purple-50"
+            role="button"
+            tabIndex={0}
+            aria-label={`View ${type.name} products`}
           >
-            <img className="text-purple-600 mb-4" src={type.icon} alt={type.name} />
-            <h3 className="text-xl font-bold text-gray-800">{type.name}</h3>
-            <p className="text-gray-600 text-center mt-2">{type.description}</p>
+            <img 
+              className="w-24 h-24 mb-4 object-contain transition-transform duration-300 hover:scale-110" 
+              src={type.icon} 
+              alt={type.name}
+              loading="lazy"
+            />
+            <h3 className="text-xl font-bold text-gray-800 mb-2">{type.name}</h3>
+            <p className="text-gray-600 text-center">{type.description}</p>
           </div>
         ))}
-
       </div>
-      {/* Conditional Rendering of Detail Page */}
+
       {selectedProductType && (
         <ProductDetailPage 
           productType={selectedProductType}
@@ -59,7 +61,6 @@ export default function ProductTypesGrid({ productTypes }: ProductTypesGridProps
           onClose={handleCloseDetailPage} 
         />
       )}
-
     </div>
   );
 }
