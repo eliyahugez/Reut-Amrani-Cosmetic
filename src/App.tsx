@@ -14,7 +14,6 @@ import ServicesPage from "./components/ServiceModal";
 import WhatsAppButton from "./components/WhatsAppButton";
 import { HelmetProvider } from "react-helmet-async";
 import SEOMetadata from "./components/SEOMetadata";
-import StyledText from "./components/StyledText";
 import VideoGallery from "./components/VideoGallery";
 
 function App() {
@@ -43,9 +42,6 @@ function App() {
         </main>
         <WhatsAppButton />
         <Footer />
-        <StyledText>
-          <p>Reut Amrani אליהו גז</p>
-        </StyledText>
       </div>
     </HelmetProvider>
   );

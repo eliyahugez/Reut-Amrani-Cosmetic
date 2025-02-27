@@ -1,25 +1,31 @@
-import React, { useState } from 'react';
-import { ProductType, ProductDetail } from './productData.tsx';
-import ProductDetailPage from './ProductDetailPage';
-import ScrollReveal from './ScrollReveal.tsx';
+import React, { useState, useCallback } from "react";
+import { ProductType, ProductDetail } from "./productData.tsx";
+import ProductDetailPage from "./ProductDetailPage";
+import ScrollReveal from "./ScrollReveal.tsx";
+import OptimizedImage from "./OptimizedImage";
 
 type ProductTypesGridProps = {
   productTypes: ProductType[];
 };
 
-export default function ProductTypesGrid({ productTypes }: ProductTypesGridProps) {
-  const [selectedProductType, setSelectedProductType] = useState<ProductType | null>(null);
-  const [selectedProduct, setSelectedProduct] = useState<ProductDetail | null>(null);
+export default function ProductTypesGrid({
+  productTypes,
+}: ProductTypesGridProps) {
+  const [selectedProductType, setSelectedProductType] =
+    useState<ProductType | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<ProductDetail | null>(
+    null
+  );
 
-  const handleTypeClick = (type: ProductType) => {
+  const handleTypeClick = useCallback((type: ProductType) => {
     setSelectedProductType(type);
     setSelectedProduct(type.products[0] || null);
-  };
+  }, []);
 
-  const handleCloseDetailPage = () => {
+  const handleCloseDetailPage = useCallback(() => {
     setSelectedProductType(null);
     setSelectedProduct(null);
-  };
+  }, []);
 
   return (
     <div className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
@@ -28,37 +34,43 @@ export default function ProductTypesGrid({ productTypes }: ProductTypesGridProps
           המוצרים שלנו
         </h1>
       </ScrollReveal>
-      <div id="services" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+      <div
+        id="services"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto"
+      >
         {productTypes.map((type) => (
-          <div 
-            key={type.id} 
-            onClick={() => handleTypeClick(type)}
-            className="bg-purple-100 p-6 rounded-lg shadow-md hover:shadow-xl 
-                      transition-all duration-300 cursor-pointer 
-                      transform hover:-translate-y-2 
-                      flex flex-col items-center
-                      hover:bg-purple-50"
-            role="button"
-            tabIndex={0}
-            aria-label={`View ${type.name} products`}
-          >
-            <img 
-              className="w-24 h-24 mb-4 object-contain transition-transform duration-300 hover:scale-110" 
-              src={type.icon} 
-              alt={type.name}
-              loading="lazy"
-            />
-            <h3 className="text-xl font-bold text-gray-800 mb-2">{type.name}</h3>
-            <p className="text-gray-600 text-center">{type.description}</p>
-          </div>
+          <ScrollReveal key={type.id} delay={type.id * 100}>
+            <div
+              onClick={() => handleTypeClick(type)}
+              className="bg-purple-100 p-6 rounded-lg shadow-md hover:shadow-xl 
+                        transition-all duration-300 cursor-pointer 
+                        transform hover:-translate-y-2 
+                        flex flex-col items-center
+                        hover:bg-purple-50"
+              role="button"
+              tabIndex={0}
+              aria-label={`View ${type.name} products`}
+            >
+              <div className="w-24 h-24 mb-4 overflow-hidden">
+                <OptimizedImage
+                  src={type.icon}
+                  className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">
+                {type.name}
+              </h3>
+              <p className="text-gray-600 text-center">{type.description}</p>
+            </div>
+          </ScrollReveal>
         ))}
       </div>
 
       {selectedProductType && (
-        <ProductDetailPage 
+        <ProductDetailPage
           productType={selectedProductType}
           initialProduct={selectedProduct}
-          onClose={handleCloseDetailPage} 
+          onClose={handleCloseDetailPage}
         />
       )}
     </div>
