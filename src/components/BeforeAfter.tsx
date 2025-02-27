@@ -10,33 +10,39 @@ import image6 from "../../assets/b46.png";
 const transformations = [
   {
     image: image1,
-    title: "טיפול פנים",
-    description: "טיפול פנים הוצאת שחורים עם תוצאות מדהימות",
+    title: "ניקוי פנים עמוק",
+    description: "טיפול פנים מקיף הכולל ניקוי עמוק וטיפול  שחורים",
   },
   {
     image: image2,
-    title: "טיפול פנים",
-    description: "טיפול פנים מקצועי עם תוצאות מדהימות",
+    title: "פיגמנטציה",
+    description:
+      "טיפול מתקדם להבהרת כתמי עור, שיקום והאחדת גוון העור. התוצאות נראות כבר אחרי הטיפול הראשון",
   },
   {
     image: image3,
-    title: "טיפול פנים",
-    description: "טיפול פנים - אקנה - תוצאות מרשימות",
+    title: "טיפול באקנה",
+    description:
+      "טיפול ייעודי לאקנה הכולל ניקוי עמוק, איזון רמת השומן בעור והפחתת דלקתיות. התוצאות נראות כבר אחרי הטיפול הראשון",
   },
   {
     image: image4,
-    title: "טיפול פנים",
-    description: "טיפול פנים - שיקום העור",
+    title: "טיפול באקנה",
+    description:
+      "טיפול ייעודי לאקנה הכולל ניקוי עמוק, איזון רמת השומן בעור והפחתת דלקתיות. התוצאות נראות כבר אחרי הטיפול הראשון",
   },
   {
     image: image5,
-    title: "טיפול פנים",
-    description: "טיפול פנים - הבהרת כתמים",
+    title: "טיפול בצלקות פוסט אקנה",
+    description:
+      "טיפול מתקדם לשיקום והחלקת צלקות אקנה. שילוב טכנולוגיות מתקדמות להמרצת ייצור קולגן וחידוש העור. תוצאות נראות לעין כבר לאחר מספר טיפולים",
   },
+
   {
     image: image6,
-    title: "טיפול פנים",
-    description: "טיפול פנים - אנטי אייג'ינג",
+    title: "טיפול באקנה דלקתי",
+    description:
+      "טיפול ייעודי לאקנה הכולל ניקוי עמוק, איזון רמת השומן בעור והפחתת דלקתיות. התוצאות נראות כבר אחרי הטיפול הראשון",
   },
 ];
 
@@ -69,7 +75,9 @@ export default function BeforeAfter() {
                   key={index}
                   src={item.image}
                   alt={`Transformation ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-100" : "opacity-0"}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                    index === currentIndex ? "opacity-100" : "opacity-0"
+                  }`}
                   loading="lazy"
                 />
               ))}
@@ -77,10 +85,10 @@ export default function BeforeAfter() {
 
             {/* Description Container */}
             <div className="text-center md:text-right p-4 md:p-0">
-              <h3 className="text-xl md:text-2xl text-amber-800 font-serif mb-4">
+              <h3 className="text-3xl md:text-3xl text-amber-800 text-center  mb-4">
                 {transformations[currentIndex].title}
               </h3>
-              <p className="text-lg md:text-2xl text-amber-800 leading-relaxed">
+              <p className="text-lg text-center  md:text-2xl text-amber-800 leading-relaxed">
                 {transformations[currentIndex].description}
               </p>
             </div>
@@ -92,7 +100,11 @@ export default function BeforeAfter() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-amber-400 ${index === currentIndex ? "bg-amber-600" : "bg-amber-300 hover:bg-amber-400"}`}
+                className={`w-3 h-3 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-amber-400 ${
+                  index === currentIndex
+                    ? "bg-amber-600"
+                    : "bg-amber-300 hover:bg-amber-400"
+                }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}

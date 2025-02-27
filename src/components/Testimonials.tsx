@@ -40,8 +40,8 @@ export default function Testimonials() {
     <section id="testimonials" className="py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <h2 className="text-4xl md:text-5xl font-mono  text-center font-[var(--heading-font)] text-amber-800 mb-16">
-            תני לאוזניים שלך לטייל בעולם של הלקוחות
+          <h2 className="text-4xl md:text-5xl font-mono text-center font-[var(--heading-font)] text-amber-800 mb-16">
+            חווית הלקוחות שלי
           </h2>
         </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

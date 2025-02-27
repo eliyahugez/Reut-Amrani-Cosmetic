@@ -14,6 +14,8 @@ import ServicesPage from "./components/ServiceModal";
 import WhatsAppButton from "./components/WhatsAppButton";
 import { HelmetProvider } from "react-helmet-async";
 import SEOMetadata from "./components/SEOMetadata";
+import StyledText from "./components/StyledText";
+import VideoGallery from "./components/VideoGallery";
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
           {/* Add padding-top to account for fixed navbar */}
           <Hero />
           <VideoSection />
+          <VideoGallery />
           <Gallery />
           <ProductTypesGrid productTypes={productTypes} />
           <Testimonials />
@@ -40,6 +43,9 @@ function App() {
         </main>
         <WhatsAppButton />
         <Footer />
+        <StyledText>
+          <p>Reut Amrani אליהו גז</p>
+        </StyledText>
       </div>
     </HelmetProvider>
   );
