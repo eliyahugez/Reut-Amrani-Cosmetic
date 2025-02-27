@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 import OptimizedImage from "./OptimizedImage";
 import image1 from "../../assets/1.jpg";

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { ProductType, ProductDetail } from "./productData.tsx";
 import ProductDetailPage from "./ProductDetailPage";
 import ScrollReveal from "./ScrollReveal.tsx";

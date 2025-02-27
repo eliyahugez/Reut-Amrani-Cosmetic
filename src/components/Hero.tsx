@@ -1,17 +1,16 @@
 import ScrollReveal from "./ScrollReveal";
 import imageBG from "../../assets/bg.png";
-import h1bg from "../../assets/Reut_Amrani_bg_removed.png.png";
 export default function Hero() {
   const classspan =
     "inline-block mx-2 w-2 h-2 bg-[#C0A080] rounded-full align-middle";
 
   return (
-    <div id="home" className="relative h-screen overflow-hidden">
+    <div id="home" className="relative h-screen w-min-screen overflow-hidden">
       {/* Background Image */}
       <img
         src={imageBG}
         alt="Background"
-        className="absolute inset-0 w-full h-full object-contain"
+        className="absolute inset-0 w-full h-full object-cover"
       />
 
       {/* Overlay Gradient */}
