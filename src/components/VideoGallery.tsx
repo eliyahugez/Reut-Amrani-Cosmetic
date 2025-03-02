@@ -13,7 +13,7 @@ const VideoGallery = () => {
   useEffect(() => {
     const options = {
       root: null,
-      rootMargin: "100px", // Preload videos when they're 100px from viewport
+      rootMargin: "200px", // Increased margin for earlier loading
       threshold: 0.1, // Trigger when 10% of the video is visible
     };
 
@@ -92,12 +92,19 @@ const VideoGallery = () => {
                 playsInline
                 muted
                 loop
-                preload="metadata"
+                preload="none"
                 onLoadedData={handleVideo1Loaded}
                 onError={() => setIsVideo1Loading(false)}
               >
+                {/* Lower quality version for mobile */}
                 <source
-                  src="https://res.cloudinary.com/djcbwaqfj/video/upload/v1740570024/Reut%20Cosmetics/jwzxdwewyrjxl9q79a4d.mp4"
+                  src="https://res.cloudinary.com/djcbwaqfj/video/upload/q_auto:low,f_auto,c_limit,w_480/v1740570024/Reut%20Cosmetics/jwzxdwewyrjxl9q79a4d.mp4"
+                  type="video/mp4"
+                  media="(max-width: 768px)"
+                />
+                {/* Medium quality for most devices */}
+                <source
+                  src="https://res.cloudinary.com/djcbwaqfj/video/upload/q_auto:good,f_auto,c_limit,w_720/v1740570024/Reut%20Cosmetics/jwzxdwewyrjxl9q79a4d.mp4"
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.
@@ -118,12 +125,19 @@ const VideoGallery = () => {
                 playsInline
                 muted
                 loop
-                preload="metadata"
+                preload="none"
                 onLoadedData={handleVideo2Loaded}
                 onError={() => setIsVideo2Loading(false)}
               >
+                {/* Lower quality version for mobile */}
                 <source
-                  src="https://res.cloudinary.com/djcbwaqfj/video/upload/v1740666405/Reut%20Cosmetics/hgjfpbwvsafbgxryw0cw.mp4"
+                  src="https://res.cloudinary.com/djcbwaqfj/video/upload/q_auto:low,f_auto,c_limit,w_480/v1740666405/Reut%20Cosmetics/hgjfpbwvsafbgxryw0cw.mp4"
+                  type="video/mp4"
+                  media="(max-width: 768px)"
+                />
+                {/* Medium quality for most devices */}
+                <source
+                  src="https://res.cloudinary.com/djcbwaqfj/video/upload/q_auto:good,f_auto,c_limit,w_720/v1740666405/Reut%20Cosmetics/hgjfpbwvsafbgxryw0cw.mp4"
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.

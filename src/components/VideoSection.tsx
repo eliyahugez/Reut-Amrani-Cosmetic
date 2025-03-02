@@ -16,7 +16,7 @@ export default function VideoSection() {
         }
       },
       {
-        rootMargin: '200px 0px',
+        rootMargin: '300px 0px', // Increased margin for earlier loading
         threshold: 0.1
       }
     );
@@ -35,6 +35,7 @@ export default function VideoSection() {
   const handleVideoLoaded = () => {
     setIsVideoLoaded(true);
     if (videoRef.current) {
+      // Play with lower quality first
       videoRef.current.play().catch(() => {});
     }
   };
@@ -51,10 +52,27 @@ export default function VideoSection() {
             playsInline
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
             poster="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-            src="https://videos.pexels.com/video-files/3998263/3998263-uhd_2732_1440_25fps.mp4"
+            preload="none"
             onLoadedData={handleVideoLoaded}
             onError={() => setIsVideoLoaded(true)}
-          />
+          >
+            {/* Use multiple sources with different qualities */}
+            <source 
+              src="https://videos.pexels.com/video-files/3998263/3998263-hd_1280_720_25fps.mp4" 
+              type="video/mp4"
+            />
+            <source 
+              src="https://videos.pexels.com/video-files/3998263/3998263-sd_960_540_25fps.mp4" 
+              type="video/mp4" 
+              media="(max-width: 768px)"
+            />
+            <source 
+              src="https://videos.pexels.com/video-files/3998263/3998263-uhd_2732_1440_25fps.mp4" 
+              type="video/mp4"
+              media="(min-width: 1200px)"
+            />
+            Your browser does not support the video tag.
+          </video>
           {!isVideoLoaded && (
             <div className="absolute inset-0 bg-gray-800 flex items-center justify-center">
               <div className="w-16 h-16 border-4 border-amber-200 border-t-transparent rounded-full animate-spin"></div>
