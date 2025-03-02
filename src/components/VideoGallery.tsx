@@ -10,11 +10,12 @@ const VideoGallery = () => {
   const [isVideo1Visible, setIsVideo1Visible] = useState(false);
   const [isVideo2Visible, setIsVideo2Visible] = useState(false);
 
+  // Separate useEffect for intersection observer to avoid dependency issues
   useEffect(() => {
     const options = {
       root: null,
       rootMargin: "200px", // Increased margin for earlier loading
-      threshold: 0.1, // Trigger when 10% of the video is visible
+      threshold: 0.01, // Trigger when just 1% of the video is visible for earlier loading
     };
 
     const handleIntersect = (
@@ -28,20 +29,29 @@ const VideoGallery = () => {
           // Only set state if video is defined
           if (video === video1Ref.current) {
             setIsVideo1Visible(true);
-            // Only play if already loaded
-            if (!isVideo1Loading) video.play().catch(() => {});
+            // Attempt to load the video
+            if (video.preload === "none") {
+              video.preload = "auto";
+            }
           } else if (video === video2Ref.current) {
             setIsVideo2Visible(true);
-            if (!isVideo2Loading) video.play().catch(() => {});
+            // Attempt to load the video
+            if (video.preload === "none") {
+              video.preload = "auto";
+            }
           }
         } else {
           // Pause when not visible
           if (video === video1Ref.current) {
             setIsVideo1Visible(false);
-            video.pause();
+            if (video.readyState >= 2) { // Only pause if it's loaded enough
+              video.pause();
+            }
           } else if (video === video2Ref.current) {
             setIsVideo2Visible(false);
-            video.pause();
+            if (video.readyState >= 2) { // Only pause if it's loaded enough
+              video.pause();
+            }
           }
         }
       });
@@ -56,24 +66,47 @@ const VideoGallery = () => {
     if (containerRef.current) observer.observe(containerRef.current);
 
     return () => observer.disconnect();
-  }, [isVideo1Loading, isVideo2Loading]);
+  }, []);
 
   // Handle successful video loading
   const handleVideo1Loaded = () => {
+    console.log("Video 1 loaded");
     setIsVideo1Loading(false);
     // Start playing if already visible
     if (isVideo1Visible && video1Ref.current) {
-      video1Ref.current.play().catch(() => {});
+      video1Ref.current.play().catch((e) => {
+        console.error("Error playing video 1:", e);
+      });
     }
   };
 
   const handleVideo2Loaded = () => {
+    console.log("Video 2 loaded");
     setIsVideo2Loading(false);
     // Start playing if already visible
     if (isVideo2Visible && video2Ref.current) {
-      video2Ref.current.play().catch(() => {});
+      video2Ref.current.play().catch((e) => {
+        console.error("Error playing video 2:", e);
+      });
     }
   };
+  
+  // Effect to handle playing videos when visibility or loading state changes
+  useEffect(() => {
+    if (isVideo1Visible && !isVideo1Loading && video1Ref.current) {
+      video1Ref.current.play().catch((e) => {
+        console.error("Error playing video 1 after state change:", e);
+      });
+    }
+  }, [isVideo1Visible, isVideo1Loading]);
+
+  useEffect(() => {
+    if (isVideo2Visible && !isVideo2Loading && video2Ref.current) {
+      video2Ref.current.play().catch((e) => {
+        console.error("Error playing video 2 after state change:", e);
+      });
+    }
+  }, [isVideo2Visible, isVideo2Loading]);
 
   return (
     <section className="w-full min-h-[80%] py-16 bg-gray-50">
@@ -92,9 +125,14 @@ const VideoGallery = () => {
                 playsInline
                 muted
                 loop
-                preload="none"
+                preload="auto"
+                autoPlay
                 onLoadedData={handleVideo1Loaded}
-                onError={() => setIsVideo1Loading(false)}
+                onCanPlay={handleVideo1Loaded}
+                onError={(e) => {
+                  console.error("Video 1 error:", e);
+                  setIsVideo1Loading(false);
+                }}
               >
                 {/* Lower quality version for mobile */}
                 <source
@@ -125,9 +163,14 @@ const VideoGallery = () => {
                 playsInline
                 muted
                 loop
-                preload="none"
+                preload="auto"
+                autoPlay
                 onLoadedData={handleVideo2Loaded}
-                onError={() => setIsVideo2Loading(false)}
+                onCanPlay={handleVideo2Loaded}
+                onError={(e) => {
+                  console.error("Video 2 error:", e);
+                  setIsVideo2Loading(false);
+                }}
               >
                 {/* Lower quality version for mobile */}
                 <source
