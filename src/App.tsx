@@ -38,7 +38,7 @@ function App() {
           <BeforeAfter />
           {/* <ServicesSection /> */}
           <ServicesPage />
-          <PricingComponent />
+          {/* <PricingComponent /> */}
         </main>
         <WhatsAppButton />
         <Footer />

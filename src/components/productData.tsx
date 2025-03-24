@@ -2,6 +2,7 @@
 import product1 from "../../assets/product/1.jpg";
 import product2 from "../../assets/product/3.jpg";
 import product3 from "../../assets/product/5.jpg";
+import b_white_gel from "../../assets/b-white_gel.jpg";
 
 export type ProductDetail = {
   id: number;

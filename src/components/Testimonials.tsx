@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import feedback1 from "../../assets/feedBack/IMG_7711.png";
-import feedback2 from "../../assets/feedBack/IMG_7712.png";
+import feedback2 from "../../assets/feedBack/feedbackLaizer.jpg";
 import feedback3 from "../../assets/feedBack/IMG_7713.png";
 import feedback4 from "../../assets/feedBack/IMG_7714.png";
 import feedback5 from "../../assets/feedBack/IMG_7715.png";
