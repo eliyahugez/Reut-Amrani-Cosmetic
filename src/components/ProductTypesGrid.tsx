@@ -31,7 +31,7 @@ export default function ProductTypesGrid({
   return (
     <div className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
       <ScrollReveal>
-        <h1 className="text-4xl md:text-5xl font-serif text-center text-pink-800 mb-6 md:mb-8 bg-amber-100 bg-opacity-40 py-4 rounded-lg hover:scale-105 duration-300">
+        <h1 className="text-4xl md:text-5xl font-serif text-center text-pink-800 mb-6 md:mb-8 bg-amber-100 bg-opacity-40 py-4 rounded-lg hover:scale-105 duration-300 animate-pulse">
           המוצרים שלנו
         </h1>
       </ScrollReveal>
@@ -57,18 +57,18 @@ export default function ProductTypesGrid({
                         transition-all duration-300 cursor-pointer 
                         transform hover:-translate-y-2 
                         flex flex-col items-center
-                        hover:bg-purple-50"
+                        hover:bg-purple-50 card-hover product-card"
               role="button"
               tabIndex={0}
               aria-label={`View ${type.name} products`}
             >
-              <div className="w-24 h-24 mb-4 overflow-hidden">
+              <div className="w-24 h-24 mb-4 overflow-hidden image-hover-effect rounded-full">
                 <OptimizedImage
                   src={type.icon}
-                  className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
+                  className="w-full h-full object-contain transition-transform duration-300 hover:scale-110 animate-float"
                 />
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">
+              <h3 className="text-xl font-bold text-gray-800 mb-2 transition-all duration-300 group-hover:text-purple-700">
                 {type.name}
               </h3>
               <p className="text-gray-600 text-center">{type.description}</p>
