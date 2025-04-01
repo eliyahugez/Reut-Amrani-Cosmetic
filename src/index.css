@@ -12,6 +12,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* טעינת האתר עם אנימציה */
+body {
+  animation: fadeIn 0.8s ease-in-out;
+  overflow-x: hidden;
+}
+
 .rubik-vinyl-regular {
   font-family: "Rubik Vinyl", serif;
   font-weight: 700;
@@ -52,6 +58,65 @@ html {
   transform: translateY(0);
 }
 
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide In Animation */
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 /* Animation Delays */
 .delay-0 {
   transition-delay: 0ms;
@@ -78,15 +143,98 @@ html {
 /* Smooth Image Zoom */
 .image-zoom {
   transition: transform 0.8s ease-out;
+  overflow: hidden;
 }
 
 .image-zoom:hover {
   transform: scale(1.05);
 }
 
+/* Enhanced Image Hover Effects */
+.image-hover-effect {
+  transition: all 0.4s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-hover-effect img {
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.image-hover-effect:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.image-hover-effect::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.image-hover-effect:hover::after {
+  opacity: 1;
+}
+
 /* Smooth Section Transitions */
 .section-transition {
   transition: all 0.5s ease-out;
+}
+
+/* Button Animation Effects */
+.button-pulse {
+  animation: pulse 2s infinite;
+}
+
+.button-hover-effect {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-hover-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.button-hover-effect:hover::before {
+  left: 100%;
+}
+
+/* Mobile Specific Animations */
+@media (max-width: 768px) {
+  .mobile-fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .mobile-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 }
 
 /* Navbar Scroll Effect */
@@ -98,6 +246,55 @@ html {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonial Card Effects */
+.testimonial-card {
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Product Card Effects */
+.product-card {
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.1));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .playwrite-in-cosmetic {
