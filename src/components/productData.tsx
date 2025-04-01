@@ -710,7 +710,7 @@ export const productTypes: ProductType[] = [
     name: "2080",
     description:
       "מותג 2080 מציע מגוון רחב של מוצרי היגיינת הפה, המפותחים בטכנולוגיה מתקדמת לשמירה על בריאות השיניים והחניכיים. המוצרים מבוססים על מחקר מדעי ומציעים פתרונות יעילים לכל צרכי בריאות הפה.",
-    icon: "https://www.2080.co.kr/images/common/logo.png",
+    icon: "https://www.2080skincare.co.il/wp-content/uploads/2021/04/20-80skincare-Logo.png",
     products: [
       {
         id: 1,
