@@ -40,14 +40,14 @@ export default function Testimonials() {
     <section id="testimonials" className="py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <h2 className="text-4xl md:text-5xl font-mono text-center font-[var(--heading-font)] text-amber-800 mb-16">
+          <h2 className="text-4xl md:text-5xl font-mono text-center font-[var(--heading-font)] text-amber-800 mb-16 animate-float">
             חווית הלקוחות שלי
           </h2>
         </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <ScrollReveal key={index} className={`delay-${index * 200}`}>
-              <div className="bg-white p-3 rounded-3xl shadow-lg transform transition-all duration-300 hover:-translate-y-2">
+              <div className="bg-white p-3 rounded-3xl shadow-lg transform transition-all duration-300 hover:-translate-y-2 testimonial-card">
                 <div className="flex justify-center mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
