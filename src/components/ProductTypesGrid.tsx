@@ -3,6 +3,7 @@ import { ProductType, ProductDetail } from "./productData.tsx";
 import ProductDetailPage from "./ProductDetailPage";
 import ScrollReveal from "./ScrollReveal.tsx";
 import OptimizedImage from "./OptimizedImage";
+import CatalogDownload from "./CatalogDownload";
 
 type ProductTypesGridProps = {
   productTypes: ProductType[];
@@ -30,9 +31,19 @@ export default function ProductTypesGrid({
   return (
     <div className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
       <ScrollReveal>
-        <h1 className="text-4xl md:text-5xl font-serif text-center text-pink-800 mb-12 md:mb-16 bg-amber-100 bg-opacity-40 py-4 rounded-lg hover:scale-105 duration-300">
+        <h1 className="text-4xl md:text-5xl font-serif text-center text-pink-800 mb-6 md:mb-8 bg-amber-100 bg-opacity-40 py-4 rounded-lg hover:scale-105 duration-300">
           המוצרים שלנו
         </h1>
+      </ScrollReveal>
+
+      <ScrollReveal delay={150}>
+        <div className="flex justify-center mb-8 md:mb-12">
+          <CatalogDownload
+            catalogPath="/catalog/קטלוג מוצרים למכירה 04.2023.pdf"
+            buttonText="הורד את קטלוג המוצרים המלא"
+            className="shadow-md hover:shadow-lg"
+          />
+        </div>
       </ScrollReveal>
       <div
         id="services"
