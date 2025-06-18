@@ -15,6 +15,7 @@ import WhatsAppButton from "./components/WhatsAppButton";
 import { HelmetProvider } from "react-helmet-async";
 import SEOMetadata from "./components/SEOMetadata";
 import VideoGallery from "./components/VideoGallery";
+import PriceListPage from "./components/PriceListPage";
 
 function App() {
   return (
@@ -33,8 +34,9 @@ function App() {
           <VideoSection />
           <VideoGallery />
           <Gallery />
-          <ProductTypesGrid productTypes={productTypes} />
+          {/* <ProductTypesGrid productTypes={productTypes} /> */}
           <Testimonials />
+          <PriceListPage />
           <BeforeAfter />
           {/* <ServicesSection /> */}
           <ServicesPage />

@@ -37,7 +37,7 @@ const services: Service[] = [
     image: photoFacial,
     video: {
       type: "local",
-      url: "https://res.cloudinary.com/djcbwaqfj/video/upload/v1738004621/zyxczbanc91w2k5omdzz.mp4",
+      url: "https://res.cloudinary.com/djcbwaqfj/video/upload/v1750273575/Reut%20Cosmetics/yxrvwcltouvdwqsvd7vo.mp4",
       thumbnail: "/images/facial-thumbnail.jpg",
     },
     technologies: ["מיזוטרפיה", "פילינג יהלום", "פוטוטרפיה"],
@@ -47,8 +47,9 @@ const services: Service[] = [
       image: feedbackFaical,
     },
     pricing: [
-      { description: "טיפול בודד", price: "₪350" },
-      { description: "סדרת 6 טיפולים", price: "₪300 לטיפול" },
+      { description: "טיפול בודד", price: "₪400" },
+      { description: "סדרת 6 טיפולים", price: "₪350 לטיפול" },
+      { description: "טיפול לחות וגלואו", price: "₪300" },
     ],
   },
   {
@@ -67,9 +68,9 @@ const services: Service[] = [
       image: feedbackLaizer,
     },
     pricing: [
-      { description: "רגליים", price: "₪250" },
-      { description: "שחי + מפשעות", price: "₪250" },
-      { description: "כל הגוף", price: "₪600" },
+      { description: "איזור", price: "₪100-250" },
+      { description: "שחי + מפשעות", price: "לפי דרישה" },
+      { description: "כל הגוף", price: "₪599" },
     ],
   },
   {
@@ -88,8 +89,8 @@ const services: Service[] = [
       image: feedbackMitzuk,
     },
     pricing: [
-      { description: "סדרה בת שישה טיפולים", price: " לטיפול ₪300" },
       { description: "טיפול בודד", price: "₪400" },
+      { description: "סדרה בת שישה טיפולים", price: " לטיפול ₪300" },
     ],
   },
   {
@@ -98,7 +99,7 @@ const services: Service[] = [
     image: photoGabot,
     video: {
       type: "local",
-      url: "https://res.cloudinary.com/djcbwaqfj/video/upload/v1742848353/Reut%20Cosmetics/cgkwbmng0qov6m5ejcwz.mp4",
+      url: "https://res.cloudinary.com/djcbwaqfj/video/upload/v1750273324/Reut%20Cosmetics/jt1lavtxhem598tnmdsb.mp4",
       thumbnail: "/images/massage-thumbnail.jpg",
     },
     technologies: ["חומר כימי מאושר משרד הבריאות"],
@@ -108,8 +109,8 @@ const services: Service[] = [
       image: feedbackGabot,
     },
     pricing: [
-      { description: "גבות", price: "200" },
-      { description: "ריסים", price: "250" },
+      { description: "ריסים", price: "₪300" },
+      { description: "גבות", price: "₪250" },
     ],
   },
 ];

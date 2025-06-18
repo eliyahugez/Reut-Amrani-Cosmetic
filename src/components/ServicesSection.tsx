@@ -24,11 +24,11 @@ const ServicesSection = () => {
       items: [
         {
           description: "טיפול פנים בודד",
-          price: "₪350",
+          price: "400₪",
         },
         {
           description: "סידרה של 6 טיפולים",
-          price: "₪300 לטיפול",
+          price: "₪350 לטיפול",
         },
       ],
     },
@@ -38,7 +38,7 @@ const ServicesSection = () => {
       items: [
         {
           description: "איזור",
-          price: "₪200",
+          price: "100-250₪",
         },
         {
           description: "כמה אזורים",
@@ -46,7 +46,7 @@ const ServicesSection = () => {
         },
         {
           description: "כל הגוף",
-          price: "₪600",
+          price: "₪599",
         },
       ],
     },

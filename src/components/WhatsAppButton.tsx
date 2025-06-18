@@ -3,9 +3,12 @@ import { FaWhatsapp } from "react-icons/fa"; // ייבוא אייקון WhatsApp
 
 const WhatsAppButton = () => {
   const phoneNumber = "972527456181"; // מספר הטלפון שלך
-  const message = "היי, האם יש לכם טיפול שגורם לעור שלי להראות כמו של תינוק? כי אני רוצה להחזיר את הגלגל לאחור! 👶😄";
+  const message =
+    "היי, הגעתי דרך האתר (: אני מתעניינת בטיפולים אצלך בקליניקה אשמח לשמוע פרטים! ";
   // יצירת קישור ל-WhatsApp
-  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    message
+  )}`;
 
   return (
     <a

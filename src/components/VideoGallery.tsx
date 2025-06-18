@@ -44,12 +44,14 @@ const VideoGallery = () => {
           // Pause when not visible
           if (video === video1Ref.current) {
             setIsVideo1Visible(false);
-            if (video.readyState >= 2) { // Only pause if it's loaded enough
+            if (video.readyState >= 2) {
+              // Only pause if it's loaded enough
               video.pause();
             }
           } else if (video === video2Ref.current) {
             setIsVideo2Visible(false);
-            if (video.readyState >= 2) { // Only pause if it's loaded enough
+            if (video.readyState >= 2) {
+              // Only pause if it's loaded enough
               video.pause();
             }
           }
@@ -90,7 +92,7 @@ const VideoGallery = () => {
       });
     }
   };
-  
+
   // Effect to handle playing videos when visibility or loading state changes
   useEffect(() => {
     if (isVideo1Visible && !isVideo1Loading && video1Ref.current) {
@@ -136,13 +138,13 @@ const VideoGallery = () => {
               >
                 {/* Lower quality version for mobile */}
                 <source
-                  src="https://res.cloudinary.com/djcbwaqfj/video/upload/q_auto:low,f_auto,c_limit,w_480/v1740570024/Reut%20Cosmetics/jwzxdwewyrjxl9q79a4d.mp4"
+                  src="https://res.cloudinary.com/djcbwaqfj/video/upload/v1750272862/Reut%20Cosmetics/zhhp1mnsoywaxnfhbxwx.mp4"
                   type="video/mp4"
                   media="(max-width: 768px)"
                 />
                 {/* Medium quality for most devices */}
                 <source
-                  src="https://res.cloudinary.com/djcbwaqfj/video/upload/q_auto:good,f_auto,c_limit,w_720/v1740570024/Reut%20Cosmetics/jwzxdwewyrjxl9q79a4d.mp4"
+                  src="https://res.cloudinary.com/djcbwaqfj/video/upload/v1750272862/Reut%20Cosmetics/zhhp1mnsoywaxnfhbxwx.mp4"
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.
@@ -174,13 +176,13 @@ const VideoGallery = () => {
               >
                 {/* Lower quality version for mobile */}
                 <source
-                  src="https://res.cloudinary.com/djcbwaqfj/video/upload/q_auto:low,f_auto,c_limit,w_480/v1740666405/Reut%20Cosmetics/hgjfpbwvsafbgxryw0cw.mp4"
+                  src="https://res.cloudinary.com/djcbwaqfj/video/upload/v1750272998/Reut%20Cosmetics/zp0cpxq1dz2rayslbgpy.mp4"
                   type="video/mp4"
                   media="(max-width: 768px)"
                 />
                 {/* Medium quality for most devices */}
                 <source
-                  src="https://res.cloudinary.com/djcbwaqfj/video/upload/q_auto:good,f_auto,c_limit,w_720/v1740666405/Reut%20Cosmetics/hgjfpbwvsafbgxryw0cw.mp4"
+                  src="https://res.cloudinary.com/djcbwaqfj/video/upload/v1750272998/Reut%20Cosmetics/zp0cpxq1dz2rayslbgpy.mp4"
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.
