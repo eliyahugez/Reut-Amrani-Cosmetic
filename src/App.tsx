@@ -16,6 +16,7 @@ import { HelmetProvider } from "react-helmet-async";
 import SEOMetadata from "./components/SEOMetadata";
 import VideoGallery from "./components/VideoGallery";
 import PriceListPage from "./components/PriceListPage";
+import BusinessStats from "./components/BusinessStats";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Hero />
           <VideoSection />
           <VideoGallery />
+          <BusinessStats />
           <Gallery />
           {/* <ProductTypesGrid productTypes={productTypes} /> */}
           <Testimonials />
