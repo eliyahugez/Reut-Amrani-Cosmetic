@@ -7,6 +7,7 @@ interface Service {
   title: string;
   items: ServiceItem[];
   image?: string; // הוספת תמיכה בתמונות אופציונליות
+  cta?: string; // הוספת שדה CTA לשירות
 }
 
 interface ServiceItem {
@@ -21,6 +22,7 @@ const ServicesSection = () => {
     {
       title: "טיפולי פנים",
       image: price1,
+      cta: "לפרטים נוספים על טיפולי פנים",
       items: [
         {
           description: "טיפול פנים בודד",
@@ -35,6 +37,7 @@ const ServicesSection = () => {
     {
       title: "לייזר",
       image: price2,
+      cta: "לפרטים נוספים על הסרת שיער בלייזר",
       items: [
         {
           description: "איזור",
@@ -98,7 +101,7 @@ const ServicesSection = () => {
           >
             <div className="flex flex-col md:flex-row gap-6 items-start">
               {service.image && (
-                <motion.div className="relative w-full md:w-48 h-48 flex-shrink-0 group">
+                <motion.div className="relative w-full md:w-48 h-48 flex-shrink-0 group flex flex-col items-center justify-end pb-2">
                   <motion.img
                     src={service.image}
                     alt={service.title}
@@ -135,6 +138,12 @@ const ServicesSection = () => {
                       />
                     </svg>
                   </div>
+                  {/* טקסט CTA מתחת לתמונה */}
+                  {service.cta && (
+                    <span className="mt-2 text-sm font-bold text-amber-700 bg-white/90 rounded-full px-3 py-1 shadow animate-pulse border border-amber-200 w-fit mx-auto">
+                      {service.cta}
+                    </span>
+                  )}
                 </motion.div>
               )}
 

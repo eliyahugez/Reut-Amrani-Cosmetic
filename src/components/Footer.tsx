@@ -47,7 +47,7 @@ export default function Footer() {
             </h3>
             <div className="flex gap-6">
               <a
-                href="https://www.instagram.com/reut_amrani_/"
+                href="https://www.instagram.com/reutcosmetics?igsh=MXZwNzE3YmV6dWhtdw=="
                 className="hover:text-amber-200 transition-colors duration-300"
                 aria-label="Follow us on Instagram"
               >

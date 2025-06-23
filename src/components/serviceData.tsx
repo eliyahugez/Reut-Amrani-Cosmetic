@@ -28,6 +28,7 @@ export interface Service {
     description: string;
     price: string | number;
   }[];
+  cta: string; // New field added for call to action text
 }
 
 const services: Service[] = [
@@ -51,6 +52,7 @@ const services: Service[] = [
       { description: "סדרת 6 טיפולים", price: "₪350 לטיפול" },
       { description: "טיפול לחות וגלואו", price: "₪300" },
     ],
+    cta: "לחצו כאן לפרטים נוספים על הטיפול!", // Call to action text added
   },
   {
     id: "laser",
@@ -72,6 +74,7 @@ const services: Service[] = [
       { description: "שחי + מפשעות", price: "לפי דרישה" },
       { description: "כל הגוף", price: "₪599" },
     ],
+    cta: "לחצו כאן לפרטים נוספים על הטיפול!", // Call to action text added
   },
   {
     id: "mitzk",
@@ -92,6 +95,7 @@ const services: Service[] = [
       { description: "טיפול בודד", price: "₪400" },
       { description: "סדרה בת שישה טיפולים", price: " לטיפול ₪300" },
     ],
+    cta: "לחצו כאן לפרטים נוספים על הטיפול!", // Call to action text added
   },
   {
     id: "gabot",
@@ -112,6 +116,7 @@ const services: Service[] = [
       { description: "ריסים", price: "₪300" },
       { description: "גבות", price: "₪250" },
     ],
+    cta: "לחצו כאן לפרטים נוספים על הטיפול!", // Call to action text added
   },
 ];
 

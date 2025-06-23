@@ -186,9 +186,25 @@ const ServicesPage = () => {
                 />
               </div>
               <div className="p-6 bg-amber-100">
-                <h2 className="text-xl md:text-2xl font-semibold text-amber-800">
-                  {service.title}
-                </h2>
+                <div className="flex items-center gap-2 relative">
+                  <h2 className="text-xl md:text-2xl font-semibold text-amber-800 flex-1">
+                    {service.title}
+                  </h2>
+                  {/* אייקון לחיצה עם ripple */}
+                  <span className="relative flex items-center justify-center">
+                    <span className="absolute w-8 h-8 rounded-full bg-amber-300 opacity-60 animate-ripple"></span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="#fbbf24"
+                      width="28"
+                      height="28"
+                      className="relative z-10"
+                    >
+                      <path d="M12 2a2 2 0 0 1 2 2v6h2.5a1.5 1.5 0 0 1 1.06 2.56l-6.5 6.5a1.5 1.5 0 0 1-2.12-2.12l6.5-6.5A1.5 1.5 0 0 1 14.5 10H12V4a2 2 0 0 1 2-2z" />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </motion.div>
           ))}
