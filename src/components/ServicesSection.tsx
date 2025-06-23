@@ -98,19 +98,49 @@ const ServicesSection = () => {
           >
             <div className="flex flex-col md:flex-row gap-6 items-start">
               {service.image && (
-                <motion.img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full md:w-48 h-48 object-cover rounded-lg shadow-md"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  loading="lazy"
-                />
+                <motion.div className="relative w-full md:w-48 h-48 flex-shrink-0 group">
+                  <motion.img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover rounded-lg shadow-md border-2 border-amber-300 active:scale-105 active:shadow-2xl transition-transform duration-200"
+                    whileHover={{
+                      scale: 1.07,
+                      boxShadow: "0 0 0 4px #fbbf24, 0 8px 32px #fbbf24aa",
+                    }}
+                    whileTap={{
+                      scale: 1.12,
+                      boxShadow: "0 0 0 8px #fbbf24, 0 8px 32px #fbbf24cc",
+                    }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    loading="lazy"
+                    style={{ cursor: "pointer" }}
+                  />
+                  {/* אייקון חץ עגול עם pulse בפינה */}
+                  <div className="absolute top-2 right-2 bg-white rounded-full shadow-lg p-2 z-20 animate-pulse">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#fbbf24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      height="24"
+                    >
+                      <circle cx="12" cy="12" r="12" fill="#fffde7" />
+                      <path
+                        d="M10 8l4 4-4 4"
+                        stroke="#fbbf24"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        fill="none"
+                      />
+                    </svg>
+                  </div>
+                </motion.div>
               )}
 
               <div className="flex-1">
                 <motion.h3
-                  className="text-2xl font-semibold mb-4 text-primary-600 cursor-pointer hover:text-primary-700"
+                  className="text-2xl font-semibold mb-4 text-primary-600 cursor-pointer hover:text-primary-700 flex items-center justify-between gap-2"
                   onClick={() =>
                     setSelectedService(selectedService === index ? null : index)
                   }
@@ -119,7 +149,13 @@ const ServicesSection = () => {
                   tabIndex={0}
                   aria-expanded={selectedService === index}
                 >
-                  {service.title}
+                  <span>{service.title}</span>
+                  <span
+                    className="ml-2 text-lg md:text-xl text-amber-500 animate-wiggle select-none"
+                    style={{ fontFamily: "monospace" }}
+                  >
+                    🖱️
+                  </span>
                 </motion.h3>
 
                 <motion.div

@@ -1,4 +1,4 @@
-import photoFacial from "../../assets/bg.png";
+import photoFacial from "../../assets/cover-face-service.jpeg";
 import feedbackFaical from "../../assets/feedBack/IMG_7715.png";
 import feedbackLaizer from "../../assets/feedBack/feedbackLaizer1.jpg";
 import feedbackGabot from "../../assets/feedBack/gabotbackLaizer.jpg";
@@ -58,7 +58,7 @@ const services: Service[] = [
     image: photoLaizer,
     video: {
       type: "local",
-      url: "https://res.cloudinary.com/djcbwaqfj/video/upload/video-output-AFBC899F-F5F5-47C0-B815-E6347DA118AF_sh0i2f.mp4",
+      url: "https://res.cloudinary.com/djcbwaqfj/video/upload/v1750272862/Reut%20Cosmetics/zhhp1mnsoywaxnfhbxwx.mp4",
       thumbnail: "/images/laser-thumbnail.jpg",
     },
     technologies: ["FEATHER LITE LEONARDO", "היפר פולס", "ALT"],

@@ -13,7 +13,7 @@ import feedback10 from "../../assets/feedBack/IMG_7720.png";
 
 const testimonials = [
   {
-    name: "מיכל לוי",
+    name: "",
     text: "הטיפולים תמיד מדויקים ומותאמים אישית. ממליצה בחום!",
     rating: 5,
     image: feedback2,

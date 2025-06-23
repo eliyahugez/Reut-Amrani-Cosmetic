@@ -117,6 +117,30 @@ body {
   }
 }
 
+/* Wiggle Animation */
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(-8deg);
+  }
+  60% {
+    transform: rotate(8deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 1.2s infinite;
+}
+
 /* Animation Delays */
 .delay-0 {
   transition-delay: 0ms;

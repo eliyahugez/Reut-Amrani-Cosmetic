@@ -1,22 +1,30 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import VideoSection from "./components/VideoSection";
-import Gallery from "./components/Gallery";
-import BeforeAfter from "./components/BeforeAfter";
-import Testimonials from "./components/Testimonials";
-import Footer from "./components/Footer";
 import productTypes from "./components/productData";
-import ProductTypesGrid from "./components/ProductTypesGrid";
-import PricingComponent from "./components/PricingComponent";
-import ServicesSection from "./components/ServicesSection";
-import ServicesPage from "./components/ServiceModal";
-import WhatsAppButton from "./components/WhatsAppButton";
 import { HelmetProvider } from "react-helmet-async";
 import SEOMetadata from "./components/SEOMetadata";
-import VideoGallery from "./components/VideoGallery";
-import PriceListPage from "./components/PriceListPage";
-import BusinessStats from "./components/BusinessStats";
+
+// Suggestion 3: Use React.lazy for components below the fold
+const VideoSection = lazy(() => import("./components/VideoSection"));
+const Gallery = lazy(() => import("./components/Gallery"));
+const BeforeAfter = lazy(() => import("./components/BeforeAfter"));
+const Testimonials = lazy(() => import("./components/Testimonials"));
+const Footer = lazy(() => import("./components/Footer"));
+const ProductTypesGrid = lazy(() => import("./components/ProductTypesGrid"));
+const PricingComponent = lazy(() => import("./components/PricingComponent"));
+// Suggestion 1: Import the new consolidated Services component
+const Services = lazy(() => import("./components/ServiceModal"));
+const WhatsAppButton = lazy(() => import("./components/WhatsAppButton"));
+const VideoGallery = lazy(() => import("./components/VideoGallery"));
+const PriceListPage = lazy(() => import("./components/PriceListPage"));
+const BusinessStats = lazy(() => import("./components/BusinessStats"));
+
+// Suggestion 2: Use a configuration object to manage component visibility
+const componentConfig = {
+  showProductTypesGrid: false,
+  showPricingComponent: false,
+};
 
 function App() {
   return (
@@ -32,20 +40,26 @@ function App() {
           {" "}
           {/* Add padding-top to account for fixed navbar */}
           <Hero />
-          <VideoSection />
-          <VideoGallery />
-          <BusinessStats />
-          <Gallery />
-          {/* <ProductTypesGrid productTypes={productTypes} /> */}
-          <Testimonials />
-          <PriceListPage />
-          <BeforeAfter />
-          {/* <ServicesSection /> */}
-          <ServicesPage />
-          {/* <PricingComponent /> */}
+          <Suspense fallback={<div>Loading...</div>}>
+            <VideoSection />
+            <VideoGallery />
+            <BusinessStats />
+            <Gallery />
+            {componentConfig.showProductTypesGrid && (
+              <ProductTypesGrid productTypes={productTypes} />
+            )}
+            <Testimonials />
+            <PriceListPage />
+            <BeforeAfter />
+            {/* Suggestion 1: Render the consolidated Services component */}
+            <Services />
+            {componentConfig.showPricingComponent && <PricingComponent />}
+          </Suspense>
         </main>
-        <WhatsAppButton />
-        <Footer />
+        <Suspense fallback={<div>Loading...</div>}>
+          <WhatsAppButton />
+          <Footer />
+        </Suspense>
       </div>
     </HelmetProvider>
   );
